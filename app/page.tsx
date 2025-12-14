@@ -1,13 +1,11 @@
 'use client';
 
-import AddAndDel from "./Lab2/AddAndDel";
-import TextInput from "./Lab2/TextInput";
+import ListOfNumber from './Lab2.5/LisitOfNumber';
 
 export default function Home() {
   return (
     <main>
-      <AddAndDel />
-      <TextInput />   
+      <ListOfNumber />
     </main> 
   );
 }
