@@ -1,11 +1,11 @@
 'use client';
 
-import ListOfNumber from './Lab2.5/LisitOfNumber';
+import ListOfObject from './Lab2.5/ListOfObject';
 
 export default function Home() {
   return (
     <main>
-      <ListOfNumber />
-    </main> 
+      <ListOfObject />
+    </main>   
   );
 }
