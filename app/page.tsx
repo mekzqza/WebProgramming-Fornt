@@ -1,12 +1,13 @@
 'use client';
 
-import CallMethodGet from './Lab3/CallMethodGet';
+import CallMethodPost from './Lab3/CallMethodPost';
+import CallMethodGet from './Lab3/CallMethodPost';
 
 
 export default function Home() {
   return (
     <main>
-      <CallMethodGet />
+      <CallMethodPost />
     </main>   
   );
 }

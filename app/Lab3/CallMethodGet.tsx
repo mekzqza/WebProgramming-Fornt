@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-type Store = { id: number; name: string; address: string };
+type Store = { name: string; address: string };
 
 export default function CallMethodGet() {
   const [stores, setStores] = useState<Store[]>([]);
@@ -27,8 +27,8 @@ export default function CallMethodGet() {
       <h2>Stores</h2>
       <button onClick={fetchStores}>Refresh</button>
       <ul>
-        {stores.map((store) => (
-          <li key={store.id}>
+        {stores.map((store, index) => (
+          <li key={index}>
             {store.name} - {store.address}
           </li>
         ))}
