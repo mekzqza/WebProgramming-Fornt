@@ -1,11 +1,12 @@
 'use client';
 
-import ListOfObject from './Lab2.5/ListOfObject';
+import CallMethodGet from './Lab3/CallMethodGet';
+
 
 export default function Home() {
   return (
     <main>
-      <ListOfObject />
+      <CallMethodGet />
     </main>   
   );
 }
