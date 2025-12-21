@@ -14,7 +14,6 @@ export default function CallMethodGet() {
       setStores(data);
     } catch (err) {
       console.error('Failed to fetch stores:', err);
-      setStores([]);
     }
   }
 
@@ -24,7 +23,6 @@ export default function CallMethodGet() {
 
   return (
     <div>
-      <h2>Stores</h2>
       <button onClick={fetchStores}>Refresh</button>
       <ul>
         {stores.map((store, index) => (

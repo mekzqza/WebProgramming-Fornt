@@ -1,13 +1,11 @@
 'use client';
 
-import CallMethodPost from './Lab3/CallMethodPost';
-import CallMethodGet from './Lab3/CallMethodPost';
-
+import ListOfNumber from "./Lab2.5/ListOfNumber";
 
 export default function Home() {
   return (
     <main>
-      <CallMethodPost />
+      <ListOfNumber />
     </main>   
   );
 }

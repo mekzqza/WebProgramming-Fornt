@@ -23,8 +23,6 @@ export default function CallMethodPost() {
 
   return (
     <div>
-      <h2>POST /store</h2>
-      <div>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -33,7 +31,6 @@ export default function CallMethodPost() {
           value={address}
           onChange={(e) => setAddress(e.target.value)}
         />
-      </div>
 
       <button onClick={submit} >ส่งข้อมูล</button>
 

@@ -1,34 +1,38 @@
 'use client';
 import { useState } from "react";
 
-export interface Data{
-    name:string;
-    price:string;
+interface Data{
+    name:string,
+    price:string
 }
 
-export default function ListOfObject(){
-    const [lst,setLst] = useState<Data[]>([{name:'A',price:"100"},{name:'B',price:"200"}]);
-    const [intPutName, setIntPutName] = useState<string>('');
-    const [intPutPrice, setIntPutPrice] = useState<string>(''); 
+export default function ListOfObject (){
+    const [lst,setLst] = useState<Data[]>([
+        {name:'A',price:'10'},
+        {name:'B',price:'20'},
+        {name:'C',price:'30'},
+    ]);
 
-
+    const [namePut,setNamePut] = useState<string>('');
+    const [pricePut,setPriceput] = useState<string>('');
+    
     const overwrite =()=>{
-        const newObj:Data={name:intPutName,price:(intPutPrice)};
-        setLst([...lst,newObj]);
-        setIntPutName('');
-        setIntPutPrice('');
+        const newobj:Data = {name:namePut,price:pricePut};
+        setLst([...lst,newobj]);
+        setNamePut('');
+        setPriceput('');
     }
-
 
     return(
         <div>
-            {lst.map((obj,index) =>(
-                <div key={index}>{obj.name} - {obj.price}</div>
+            {lst.map((item,index) => (
+                <div key={index}>
+                    <div>{item.name} {item.price}</div>
+                </div>  
             ))}
-            <input type="text" value={intPutName} onChange={(e) => setIntPutName(e.target.value)} />
-            <input type="text" value={intPutPrice} onChange={(e) => setIntPutPrice(e.target.value)} />
-
-            <button onClick={overwrite}>Add Object</button>
+            <input type="text" value={namePut} onChange={(e)=>setNamePut(e.target.value)} />
+            <input type="text" value={pricePut} onChange={(e)=> setPriceput(e.target.value)} />
+            <button onClick={overwrite}>Add</button>
         </div>
     );
 }
