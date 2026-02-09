@@ -26,8 +26,7 @@ export default function ListOfObject (){
     return(
         <div>
             {lst.map((item,index) => (
-                <div key={index}>
-                    <div>{item.name} {item.price}</div>
+                <div key={index} > {item.name} {item.price}
                 </div>  
             ))}
             <input type="text" value={namePut} onChange={(e)=>setNamePut(e.target.value)} />

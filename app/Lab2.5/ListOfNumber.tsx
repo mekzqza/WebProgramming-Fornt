@@ -4,10 +4,10 @@ export default function ListOfNumber() {
     const [lst,setLst] = useState<number[]>([21,34,5]);
     const [input,setInput] = useState<string>('');
     const add = () => {
-        const num =Number(input);
+        const num =Number(input)
         if(isNaN(num))return;
-        setLst([...lst,num]);
-        setInput('');
+        setLst([...lst,num])
+        setInput('')
     }
     const sum =lst.reduce((a,b) => a + b,0);
 
