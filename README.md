@@ -86,6 +86,86 @@ npm run dev
 
 Open [http://localhost:3000/ai-chat](http://localhost:3000/ai-chat) in your browser.
 
+## 🐳 Docker Deployment
+
+### Quick Start with Docker
+
+```bash
+# 1. Copy environment template
+cp .env.docker.example .env.local
+
+# 2. Edit .env.local with your credentials
+nano .env.local
+
+# 3. Build and start all services (Next.js, PocketBase, Nginx)
+docker-compose up -d --build
+
+# 4. Check status
+docker-compose ps
+
+# 5. View logs
+docker-compose logs -f
+```
+
+**Access the application:**
+- Frontend: http://localhost
+- PocketBase Admin: http://localhost/_/
+- PocketBase API: http://localhost/pb/
+- Health Check: http://localhost/api/health
+
+### Docker Services
+
+- **Next.js** (port 3000): Frontend + API routes
+- **PocketBase** (port 8090): Database + Backend API
+- **Nginx** (port 80/443): Reverse proxy, SSL, caching
+
+### Docker Commands
+
+```bash
+# Using NPM scripts (recommended)
+npm run docker:deploy      # Build and start
+npm run docker:up          # Start services
+npm run docker:down        # Stop services
+npm run docker:logs        # View logs
+npm run docker:ps          # Check status
+npm run docker:restart     # Restart services
+
+# Using Docker Compose directly
+docker-compose up -d --build
+docker-compose down
+docker-compose logs -f
+docker-compose restart nextjs
+```
+
+### Deploy to VPS
+
+Complete deployment guide:
+- **ภาษาไทย**: [DOCKER_DEPLOYMENT_TH.md](DOCKER_DEPLOYMENT_TH.md)
+- **English**: [DOCKER_DEPLOYMENT.md](DOCKER_DEPLOYMENT.md)
+- **Quick Reference**: [DOCKER_QUICK_REFERENCE.md](DOCKER_QUICK_REFERENCE.md)
+
+**Quick VPS deployment:**
+```bash
+# 1. Install Docker on VPS
+curl -fsSL https://get.docker.com | sh
+
+# 2. Upload project to VPS
+scp -r ./webprogramming-back root@your-vps-ip:/root/
+
+# 3. SSH and deploy
+ssh root@your-vps-ip
+cd /root/webprogramming-back
+cp .env.docker.example .env.local
+nano .env.local  # Edit credentials
+chmod +x deploy.sh
+./deploy.sh
+
+# 4. Configure firewall
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw enable
+```
+
 ## Configuration
 
 ### Chat Configuration
